@@ -1,3 +1,19 @@
 ---
-- name: add java repo 
-  apt: 
+- name: add_java_repo 
+  apt_repository:
+    repo: ppa:webupd8team/java
+    state: present
+
+- name: accept_license
+  debconf:
+    name: oracle-java8-installer
+    question: shared/accepted-oracle-license-v1-1
+    value: true
+    vtype: select
+
+- name: install_java8
+  apt:
+    name: oracle-java8-installer
+    state: latest
+    update-cache: yes
+    force: yes
