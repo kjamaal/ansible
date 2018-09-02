@@ -1,0 +1,9 @@
+- name: Add DNS Records
+  nsupdate:
+    key_algorithm: "{{ KEYALG }}"
+    key_name: "{{ KEYNAME }}"
+    key_secret: "{{ KEYSECRET }}"
+    server:  "{{ DNSSERVER }}"
+    zone: "kirk.io"
+    record: "{{ ansible_hostname }}"
+    value: "{{ ansible_eth1.ipv4.address }}"

@@ -1,0 +1,4 @@
+KEYALG: "hmac-sha512"
+KEYNAME: "kirk.io."
+KEYSECRET:  "MsdW1ERLkemieaqtaeSnU75+7ZrGwEM/x9j9OLJy5dP+/HsVie2pa+hd 7KYOSoK9XZMvU222e+jvvrPmQQjEdQ=="
+DNSSERVER:  "10.0.0.10"

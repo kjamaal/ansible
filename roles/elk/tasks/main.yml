@@ -1,0 +1,6 @@
+---
+- include: elasticsearch.yml
+- include: kibana.yml
+- include: logstash.yml
+- include: beats.yml
+- include: elasticsearch_hadoop.yml
