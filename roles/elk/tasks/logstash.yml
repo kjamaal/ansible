@@ -1,0 +1,4 @@
+- name: install_logstash
+  apt:
+    name: logstash
+    state: present

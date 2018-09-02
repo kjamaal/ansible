@@ -1,0 +1,4 @@
+- name: install_kibana
+  apt:
+    name: kibana
+    state: present
