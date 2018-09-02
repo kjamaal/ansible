@@ -1,4 +1,8 @@
 ---
+#- name: install Java8
+- include_role: 
+    name: common
+    tasks_from: java8
 - include: elasticsearch.yml
 - include: kibana.yml
 - include: logstash.yml
