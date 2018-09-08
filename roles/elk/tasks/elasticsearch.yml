@@ -3,3 +3,8 @@
   apt:
     name: elasticsearch
     state: present
+
+- name: start_elasticsearch
+  service:
+    name: elasticsearch
+    state: started
