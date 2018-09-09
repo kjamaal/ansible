@@ -2,3 +2,8 @@
   apt:
     name: kibana
     state: present
+
+- name: start_kibana
+  service:
+    name: kibana
+    state: started
