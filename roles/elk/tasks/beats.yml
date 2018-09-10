@@ -3,6 +3,14 @@
   apt:
     deb: https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.4.0-amd64.deb
 
+- name: copy_metrics_config
+  template:
+    src: templates/metricbeat.yml.j2
+    dest: /etc/metricbeat/metricbeat.yml
+    owner: root
+    group: root
+    mode: 0644
+
 - name: configure_ship_metrics
   shell: metricbeat modules enable system; metricbeat setup -e
 
