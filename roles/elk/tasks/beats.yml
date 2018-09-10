@@ -1,8 +1,12 @@
 ---
-- name: download_metric_beat
-
 - name: install_metric_beat
+  apt:
+    deb: https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.4.0-amd64.deb
 
 - name: configure_ship_metrics
+  shell: metricbeat modules enable system; metricbeat setup -e
 
 - name: start_metric_beat
+  service:
+    name: metricbeat
+    state: started
