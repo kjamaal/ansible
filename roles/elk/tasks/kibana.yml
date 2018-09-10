@@ -3,6 +3,14 @@
     name: kibana
     state: present
 
+- name: copy_kibana_config
+  template:
+    src: templates/kibana.yml.j2
+    dest: /etc/kibana/kibana.yml
+    owner: root
+    group: root
+    mode: 0644 
+
 - name: start_kibana
   service:
     name: kibana
