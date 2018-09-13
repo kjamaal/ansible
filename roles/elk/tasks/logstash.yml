@@ -2,3 +2,16 @@
   apt:
     name: logstash
     state: present
+
+- name: configure_pipeline
+  template:
+    src: templates/metrics-pipeline.conf.j2
+    dest: /etc/logstash/metrics-pipeline.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: start_logstash
+  service:
+    name: logstash
+    state: started
