@@ -11,6 +11,11 @@
     group: root
     mode: 0644
 
+- name: wait_for_kibana
+  wait_for:
+  port: 9200
+  delay: 30
+  
 - name: configure_ship_metrics
   shell: metricbeat modules enable system; metricbeat setup -e
 
