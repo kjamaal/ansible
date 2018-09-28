@@ -22,7 +22,8 @@
     delay: 30
     
 - name: configure_ship_metrics
-  shell: metricbeat modules enable system; metricbeat setup -e
+  shell: if ! [[ $(metricbeat test modules system) ]]; then metricbeat modules enable system; metricbeat setup -e; fi
+  
 
 - name: start_metric_beat
   service:
